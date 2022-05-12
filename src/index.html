@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather app</title>
+    <meta charset="UTF-8" />
+    <!--The following link is to allow the use of icons from google.-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--The following link is for Bootsrtap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!--START:Form element for city search-->
+      <div class="row mt-3 justify-content-center">
+        <div class="col-6 text-center">
+          <form id="search-form">
+            <div>
+              <input
+                id="search-text-input"
+                type="text"
+                placeholder="Choose city"
+                class="text-center"
+                autocomplete="off"
+                autofocus="on"
+              />
+            </div>
+
+            <div class="mt-2">
+              <input id="search-button" type="submit" value="Search" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--END:Form element for city search-->
+
+      <div class="text-center" id="current-location-container">
+        <button class="btn btn-primary" id="current-location-button">
+          Current location
+        </button>
+      </div>
+
+      <!--START:div.card-container -->
+      <div class="row mt-4 card-container justify-content-center">
+        <!--Emoji-->
+        <div class="col-4">
+          <div id="emoji" class="card">
+            <div class="card-body text-center">
+              <p class="card-text">
+                ⛅
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--Temperature in °C-->
+        <div class="col-4">
+          <div id="temperature-info" class="card">
+            <div class="card-body text-center">
+              <p class="card-text">
+                <span class="temperature" id="temperature">17</span>
+                <span class="units"><a href="#" id="celsius-link">°C</a></span>
+                <span class="units">|</span>
+                <span class="units"
+                  ><a href="#" id="fahrenheit-link">°F</a></span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--This is the div.row closing tag for the card container div-->
+      </div>
+      <!--END:div.card-container -->
+
+      <!--START: weather info(city, date, time, description)-->
+      <div class="row mt-3 justify-content-center">
+        <div class="col-5">
+          <div id="weather-info" class="card">
+            <div class="card-body text-center">
+              <ul>
+                <li id="chosen-city">
+                  Athens, GR
+                </li>
+
+                <li id="date-time">
+                  30/03/22, 13:50
+                </li>
+
+                <li id="weather-description" class="capitalise">
+                  Mostly sunny
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--This is the div.col closing tag for the weather info card-->
+        </div>
+        <!--This is the div.row closing tag for the weather info card-->
+      </div>
+      <!--END: weather info(city, date, time, description)-->
+
+      <!--START:5-day forecast component-->
+      <div class="row mt-3 mb-4 text-center">
+        <div id="h3-forecast" class="col-12">
+          <h3 class="d-inline-block heading">
+            5-day forecast
+          </h3>
+        </div>
+
+        <div class="col forecast">
+          Tomorrow
+          <br />
+          19°C
+        </div>
+
+        <div class="col forecast">
+          Thursday
+          <br />
+          18°C
+        </div>
+
+        <div class="col forecast">
+          Friday
+          <br />
+          22°C
+        </div>
+
+        <div class="col forecast">
+          Saturday
+          <br />
+          19°C
+        </div>
+
+        <div class="col forecast">
+          Sunday
+          <br />
+          21°C
+        </div>
+      </div>
+      <!--END:5-day forecast component-->
+
+      <footer>
+        Coded by Erofili Pateraki
+      </footer>
+      <script src="src/index.js"></script>
+
+      <!--This is the bootstrap div.container closing tag-->
+    </div>
+  </body>
+</html>
